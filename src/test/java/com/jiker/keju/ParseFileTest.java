@@ -22,11 +22,7 @@ public class ParseFileTest {
         parseFile = new ParseFile("testData.txt");
         tourInfos = parseFile.getTourInfo();
     }
-    @Test
-    public void should_parse_file_by_line() throws IOException {
-        List linesInfo =parseFile.getLines();
-        assertThat(linesInfo.get(0),is("1公里,等待0分钟"));
-    }
+
 
     @Test
     public void should_return_count_of_tour() {
@@ -72,9 +68,8 @@ public class ParseFileTest {
         Pattern compile = Pattern.compile(pattern2);
         Matcher matcher = compile.matcher(strE);
         matcher.find();
-        System.out.println(matcher.groupCount());
-        System.out.println(matcher.group(1));
-        System.out.println(matcher.group(2));
+        assertThat(matcher.group(1), is("1"));
+        assertThat(matcher.group(2), is("0"));
     }
 
 }
