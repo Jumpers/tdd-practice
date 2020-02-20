@@ -64,7 +64,8 @@ public class ParseFileTest {
     public void regexTest() {
         String strE = "1公里,等待0分钟";
 //        String pattern = "(\\d+)[\\u4E00-\\u9FA5|,]+(\\d+)[\\u4E00-\\u9FA5]+";
-        String pattern2 = "(\\d+)[\\u4E00-\\u9FA5|,]+(\\d+)";
+//        String pattern2 = "(\\d+)[\\u4E00-\\u9FA5|,]+(\\d+)";
+        String pattern2 = "([0-9]+).+([0-9]+)";
         Pattern compile = Pattern.compile(pattern2);
         Matcher matcher = compile.matcher(strE);
         matcher.find();
